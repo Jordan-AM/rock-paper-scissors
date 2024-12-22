@@ -6,3 +6,8 @@ function getComputerChoice() {
     let choice = (Math.floor(Math.random() * (max - min) + min) - Math.floor(Math.random() * (max - min))    )
     return choices[choice]
 }
+
+function getHumanChoice() {
+    let choice = prompt("Choose between [rock], [paper] or [scissors]: ").toLowerCase()
+    return choice
+}
