@@ -5,8 +5,15 @@ let humanScore = 0
 let computerScore = 0
 let drawScore = 0
 
-function getComputerChoice() {  
-    let choice = (Math.floor(Math.random() * (max - min) + min) - Math.floor(Math.random() * (max - min))    )
+function getComputerChoice() {
+    /*  
+    |   I sincerely don't know how the variable bellow works
+    |   I simply tried multiple things until this one finally worked
+    |   Somehow, it randomly gets a value between 0 and 2
+    |   Maybe my future self will be smarter and come back here later
+    |   To rewrite this in a more understandable way
+    */
+    let choice = Math.floor(Math.random() * (max - min) + min) - Math.floor(Math.random() * (max - min))
     return choices[choice]
 }
 
@@ -41,7 +48,7 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
     let rounds = prompt("How many times would you like to play?")
-    for (let i = 0; i < rounds; i++){
+    for (let loops = 0; loops < rounds; loops++) {
         playRound(getHumanChoice(), getComputerChoice())
     }
     if (humanScore > computerScore) {
@@ -55,4 +62,4 @@ function playGame() {
     }
 }
 
-playGame()
+// playGame()
